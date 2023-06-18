@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application Form</title>
+  <!-- Add Bootstrap 5 CSS link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Add your custom styles here */
+    /* For example: */
+    body {
+      padding: 20px;
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#jobTitle">Job Title</a>
+      <a class="navbar-brand" href="#role">Role</a>
+      <a class="navbar-brand" href="#location">Location</a>
+      <a class="navbar-brand" href="#responsibilities">Responsibilities</a>
+      <a class="navbar-brand" href="#requirements">Requirements</a>
+      <a class="navbar-brand" href="#salary">Salary</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Job Application Form</h1>
+    <form action="/jobs" method="POST">
+      <div class="mb-3" id="jobTitle">
+        <label for="jobTitle" class="form-label">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" class="form-control" required>
+      </div>
+      <div class="mb-3" id="role">
+        <label for="role" class="form-label">Role:</label>
+        <input type="text" id="role" name="role" class="form-control" required>
+      </div>
+      <div class="mb-3" id="location">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" name="location" class="form-control" required>
+      </div>
+      <div class="mb-3" id="responsibilities">
+        <label for="responsibilities" class="form-label">Responsibilities:</label>
+        <textarea id="responsibilities" name="responsibilities" class="form-control" required></textarea>
+      </div>
+      <div class="mb-3" id="requirements">
+        <label for="requirements" class="form-label">Requirements:</label>
+        <textarea id="requirements" name="requirements" class="form-control" required></textarea>
+      </div>
+      <div class="mb-3" id="salary">
+        <label for="salary" class="form-label">Salary:</label>
+        <input type="text" id="salary" name="salary" class="form-control" required>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+
+  <!-- Add Bootstrap 5 JavaScript link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

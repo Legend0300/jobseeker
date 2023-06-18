@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Form</title>
+  <!-- Add Bootstrap 5 CSS link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS styles */
+    body {
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .job-table {
+      margin-bottom: 20px;
+    }
+
+    .job-table .table {
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#job-description">Job Description</a>
+      <a class="navbar-brand" href="#user-form">User Form</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="mb-4" id="job-description">Job Description</h1>
+        <div class="job-table">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col" class="w-25">Field</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Job Title</th>
+                <td>{{ job.job_title }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Role</th>
+                <td>{{ job.role }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Location</th>
+                <td>{{ job.location }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Responsibilities</th>
+                <td>{{ job.responsibilities }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Requirements</th>
+                <td>{{ job.requirements }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Salary</th>
+                <td>{{ job.salary }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+
+        <h1 class="mb-4" id="user-form">User Form</h1>
+        <form action="/apply" method="POST" enctype="multipart/form-data" class="form-container">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="linkedin" class="form-label">LinkedIn Profile:</label>
+            <input type="text" id="linkedin" name="linkedin" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="education" class="form-label">Education:</label>
+            <textarea id="education" name="education" class="form-control" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="workexp" class="form-label">Work Experience:</label>
+            <textarea id="workexp" name="workexp" class="form-control" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="resume" class="form-label">Resume:</label>
+            <input type="text" id="resume" name="resume" class="form-control" required>
+          </div>
+          <input type="hidden" id="job_id" name="job_id" value="{{ job.id }}">
+
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap 5 JavaScript link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
